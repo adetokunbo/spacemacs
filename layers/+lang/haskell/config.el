@@ -33,6 +33,10 @@
 Available options are `dante' and `lsp'.
 If nil then `dante' is the default backend unless `lsp' layer is used.")
 
+;; This should be deprecated at some point, use haskell-formatter-backend instead
+(defvar haskell-enable-hindent nil
+  "When non-nil, use hindent as formatter.")
+
 ;; TODO: verify whether `stylish-haskell' breaks flycheck highlighting
 ;; reported by taksuyu 2015-10-06
 (defvar haskell-formatter-backend (cond
@@ -62,7 +66,3 @@ and `floskell'.
   "When non-nil, enable hlint integration.
 When `haskell-completion-backend' is `lsp', use its builtin support.
 When it's `dante', use `hlint-refactor-mode'.")
-
-;; This should be deprecated at some point, use haskell-formatter-backend instead
-(defvar haskell-enable-hindent nil
-  "When non-nil, use hindent as formatter.")
