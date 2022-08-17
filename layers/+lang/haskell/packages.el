@@ -259,6 +259,7 @@
 
             "hh"  'hoogle)))
 
+      (require 'haskell-debug)
       (evilified-state-evilify-map haskell-debug-mode-map
         :mode haskell-debug-mode
         :bindings
