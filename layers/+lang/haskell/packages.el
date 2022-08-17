@@ -47,7 +47,7 @@
 
     ;; lsp backend
     (lsp-haskell :toggle (eq haskell-completion-backend 'lsp)
-                 :requries lsp)
+                 :requires lsp-mode)
 
     ;; formatter
     format-all
@@ -146,6 +146,9 @@
 (defun haskell/init-lsp-haskell ()
   (use-package lsp-haskell
     :defer t
+    :init
+    (with-eval-after-load 'lsp-mode
+      (require 'lsp-haskell))
     :custom
     (lsp-haskell-hlint-on haskell-enable-hlint)))
 

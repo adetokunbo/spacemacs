@@ -42,12 +42,7 @@
 (defun spacemacs-haskell//setup-lsp ()
   "Setup LSP backend."
   (if (configuration-layer/layer-used-p 'lsp)
-      (progn
-        ;; The functionality we require from this is not an autoload, but rather some
-        ;; top-level code that registers a LSP server type. So we need to load it
-        ;; directly and can't rely on it being autoloaded.
-        (require 'lsp-haskell)
-        (lsp-deferred))
+      (lsp-deferred)
     (message "`lsp' layer is not installed, please add `lsp' layer to your dotfile.")))
 
 
